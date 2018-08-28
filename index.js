@@ -4,6 +4,16 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     client.user.setActivity('Ragnarok', {type: 'WATCHING'});
+	const channel = client.channels.get("483838057498542083");
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    // Yay, it worked!
+    console.log("Successfully connected.");
+	
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
 	// const channel = member.guild.channels.find(ch => ch.name === 'general');
 	// channel.send('Hello, I am online');
 });
