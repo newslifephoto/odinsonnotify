@@ -13,8 +13,11 @@ client.on('message', msg => {
   }
   if (msg.content.toLowerCase().startsWith("$mon")) {
     var mon = msg.content.toLowerCase().split(" ");
+
 	if(mon.length ===2){
-		msg.reply("http://ratemyserver.net/index.php?mob_name="+mon[2]+"&page=re_mob_db&f=1&mob_search=Search");
+		msg.reply(mon[0]);
+	msg.reply(mon[1]);
+		msg.reply("http://ratemyserver.net/index.php?mob_name="+mon[1]+"&page=re_mob_db&f=1&mob_search=Search");
 	}else{
 		msg.reply("lenght = "+mon.length);
 	}
