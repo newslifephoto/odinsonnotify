@@ -15,9 +15,20 @@ client.on('message', msg => {
     var mon = msg.content.toLowerCase().split(" ");
 
 	if(mon.length ===2){
-		msg.reply(mon[0]);
-	msg.reply(mon[1]);
+
+		msg.reply("Here is your search list for "+mon[1]);
 		msg.reply("http://ratemyserver.net/index.php?mob_name="+mon[1]+"&page=re_mob_db&f=1&mob_search=Search");
+	}else{
+		msg.reply("lenght = "+mon.length);
+	}
+  }
+  if (msg.content.toLowerCase().startsWith("$item")) {
+    var item = msg.content.toLowerCase().split(" ");
+
+	if(item.length ===2){
+
+		msg.reply("Here is your search list for "+item[1]);
+		msg.reply("http://ratemyserver.net/index.php?iname="+item[1]+"&page=re_item_db&quick=1&isearch=Search");
 	}else{
 		msg.reply("lenght = "+mon.length);
 	}
