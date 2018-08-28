@@ -14,7 +14,7 @@ client.on('ready', () => {
   }).catch(e => {
     // Oh no, it errored! Let's log it to console :)
     console.error(e);
-
+  }
   });
 	// const channel = member.guild.channels.find(ch => ch.name === 'general');
 	// channel.send('Hello, I am online');
