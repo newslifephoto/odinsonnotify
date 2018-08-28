@@ -3,9 +3,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
-	const channel = member.guild.channels.find(ch => ch.name === 'general');
-	channel.send('Hello, I am online');
+    client.user.setActivity('Ragnarok', {type: 'WATCHING'});
+	// const channel = member.guild.channels.find(ch => ch.name === 'general');
+	// channel.send('Hello, I am online');
 });
 
 client.on('message', msg => {
