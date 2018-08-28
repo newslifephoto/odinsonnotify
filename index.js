@@ -4,12 +4,22 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
-	client.channels.get('483838057498542081').send('I am online');
+	try{
+		client.channels.get('315373134670725120').send('I am online. see $help for command');
+	}
+	catch(e){
+	}
+	try{
+		client.channels.get('483838057498542081').send('I am online. see $help for command');
+	}
+	catch(e){
+		
+	}
 });
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong');
+  if (msg.content === '$help') {
+    msg.reply('$mon monstername\n$item itemname');
   }
   if (msg.content.toLowerCase().startsWith("$mon")) {
     var mon = msg.content.toLowerCase().split(" ");
