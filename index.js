@@ -1,6 +1,16 @@
 // Discord.js bot
 const Discord = require('discord.js');
+var fs = require('fs'),
+request = require('request');
 const client = new Discord.Client();
+var download = function(uri, filename, callback){
+  request.head(uri, function(err, res, body){
+    console.log('content-type:', res.headers['content-type']);
+    console.log('content-length:', res.headers['content-length']);
+    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+  });
+};
+
 
 client.on('ready', () => {
     client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
@@ -46,17 +56,13 @@ client.on('message', msg => {
    if (msg.content.toLowerCase().startsWith("*createmo")) {
 	    var emo = msg.content.toLowerCase().split(" ");
 		if(emo.length === 3){
-			var fs = require('fs'),
-			request = require('request');
-
-			var download = function(uri, filename, callback){
-				request.head(uri, function(err, res, body){
-				console.log('content-type:', res.headers['content-type']);
-				console.log('content-length:', res.headers['content-length']);
-				request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
-			  });
-			};
+			
+			download('https://www.google.com/images/srpr/logo3w.png', '1.png', function(){
+			console.log('done');
 			msg.reply("in 3");
+		});
+			
+			
 		}
    }
 });
