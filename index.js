@@ -10,16 +10,14 @@ client.on('ready', () => {
   channel.join().then(connection => {
     // Yay, it worked!
     console.log("Successfully connected.");
-	tChannel.send("Voice connected");
+	tChannel.send("Voice connected")
   }).catch(e => {
     // Oh no, it errored! Let's log it to console :)
     console.error(e);
-	tChannel.send("Voice connect failed");
-	tChannel.send(e);
+
   });
 	// const channel = member.guild.channels.find(ch => ch.name === 'general');
 	// channel.send('Hello, I am online');
-});
 
 client.on('message', msg => {
   if (msg.content === 'ping') {
