@@ -11,5 +11,13 @@ client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.reply('pong');
   }
+  if (msg.content.toLowerCase().startsWith("$mon")) {
+    var mon = msg.content.toLowerCase().split(" ");
+	if(mon.length ===2){
+		msg.reply("http://ratemyserver.net/index.php?mob_name="+mon[2]+"&page=re_mob_db&f=1&mob_search=Search");
+	}else{
+		msg.reply("lenght = "+mon.length);
+	}
+  }
 });
 client.login('NDgzODMzMDUxOTg2NTI2MjA4.DmZMuw.Q77zRpCY-85EdyzzhUMzqA1B88Y');
