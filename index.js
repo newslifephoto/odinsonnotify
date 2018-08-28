@@ -5,12 +5,12 @@ const client = new Discord.Client();
 client.on('ready', () => {
     client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
 	try{
-		client.channels.get('315373134670725120').send('I am online. see $help for command');
+		client.channels.get('315373134670725120').send('I am online. see !help for command');
 	}
 	catch(e){
 	}
 	try{
-		client.channels.get('483838057498542081').send('I am online. see $help for command');
+		client.channels.get('483838057498542081').send('I am online. see !help for command');
 	}
 	catch(e){
 		
@@ -18,10 +18,10 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === '$help') {
-    msg.reply('$mon monstername\n$item itemname');
+  if (msg.content === '!help') {
+    msg.reply('!mon monstername\n!item itemname');
   }
-  if (msg.content.toLowerCase().startsWith("$mon")) {
+  if (msg.content.toLowerCase().startsWith("!mon")) {
     var mon = msg.content.toLowerCase().split(" ");
 
 	if(mon.length ===2){
@@ -32,7 +32,7 @@ client.on('message', msg => {
 		msg.reply("lenght = "+mon.length);
 	}
   }
-  if (msg.content.toLowerCase().startsWith("$item")) {
+  if (msg.content.toLowerCase().startsWith("!item")) {
     var item = msg.content.toLowerCase().split(" ");
 
 	if(item.length ===2){
